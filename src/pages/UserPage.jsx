@@ -1,7 +1,12 @@
-export default function UsersPage() {
+import {useParams} from 'react-router-dom'
+
+export default function UserPage() {
+    
+    const {id} = useParams();
+    
     return (
       <div>
-        <h1>Users</h1>
+        User <h1> {`#${id}`} </h1>
       </div>
     );
 }
