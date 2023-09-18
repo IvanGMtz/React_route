@@ -19,7 +19,10 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/usuarios" element={<Navigate to="/users" />} />
           <Route path="/users" element={<UsersPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/*" element={<Dashboard />}>
+            <Route path="welcome" element={<p>Welcome!!!</p>} />
+            <Route path="goodbye" element={<p>Goodbye!!!</p>} />
+          </Route>
           <Route path="/users/:id" element={<UserPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

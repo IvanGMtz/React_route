@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link, Outlet } from 'react-router-dom'
 
 export default function Dashboard() {
   
@@ -8,9 +8,13 @@ export default function Dashboard() {
   }
 
     return (
-    <div>
-      <h1>Dashboard</h1>
-      <button onClick={handleClick}>Logout</button>
-    </div>
-  );
+      <div>
+        <h1>Dashboard</h1>
+        <button onClick={handleClick}>Logout</button>
+        <br />
+        <Link to="welcome"> say welcome</Link> <br />
+        <Link to="goodbye"> say goodbye</Link>
+        <Outlet />
+      </div>
+    );
 }
